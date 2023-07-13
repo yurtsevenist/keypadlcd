@@ -55,11 +55,17 @@ void loop(){
 
     if(!strcmp(Data, Master)){
       lcd.print("Sifre Dogru");
-      servo.write(0);    
+      servo.write(0); 
+      digitalWrite(yesil, HIGH);
+      digitalWrite(kirmizi, LOW); 
+      delay(2000);  
       }
     else{
       lcd.print("Sifre Yanlis!!!");
       servo.write(180);
+      digitalWrite(kirmizi, HIGH);
+      digitalWrite(yesil, LOW);
+      delay(2000);
       }
     
     lcd.clear();
@@ -71,5 +77,7 @@ void clearData(){
   while(data_count !=0){
     Data[data_count--] = 0; 
   }
+   digitalWrite(yesil, LOW);
+   digitalWrite(kirmizi, LOW);  
   return;
 }

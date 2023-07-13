@@ -26,7 +26,7 @@ byte colPins[COLS] = {5, 4, 3, 2};
 
 Keypad customKeypad = Keypad(makeKeymap(hexaKeys), rowPins, colPins, ROWS, COLS);
 
-LiquidCrystal_I2C lcd(0x21, 16, 2);  
+LiquidCrystal_I2C lcd(0x27, 20, 4); 
 
 void setup(){
   lcd.init(); 
@@ -38,7 +38,7 @@ void setup(){
 }
 
 void loop(){
-
+  lcd.home();
   lcd.setCursor(0,0);
   lcd.print("Sifre Girin :");
 
